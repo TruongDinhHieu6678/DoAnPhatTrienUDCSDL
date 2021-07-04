@@ -9,7 +9,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="588f006d-0e90-4345-ad36-794701036a71" name="Default Changelist" comment="" />
+    <list default="true" id="588f006d-0e90-4345-ad36-794701036a71" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/Trang.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/18600321_51_war_exploded/WEB-INF/classes/controller/ManagerProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/18600321_51_war_exploded/WEB-INF/classes/controller/ManagerProductController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/18600321_51_war_exploded/WEB-INF/classes/model/QuanLySanPham.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/18600321_51_war_exploded/WEB-INF/classes/model/QuanLySanPham.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/18600321_51_war_exploded/WEB-INF/view/ManagerProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/18600321_51_war_exploded/WEB-INF/view/ManagerProduct.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ManagerProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ManagerProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/QuanLySanPham.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/QuanLySanPham.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/ManagerProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/ManagerProduct.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/ManagerProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/ManagerProductController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/QuanLySanPham.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/QuanLySanPham.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,6 +34,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -30,6 +45,7 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectId" id="1uoKZ5BuF23dg8KQm1wVYZyYRGk" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -37,12 +53,14 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
@@ -154,11 +172,26 @@
       <updated>1625326554376</updated>
       <workItem from="1625326555769" duration="1015000" />
       <workItem from="1625374702577" duration="904000" />
-      <workItem from="1625375819964" duration="6679000" />
+      <workItem from="1625375819964" duration="27924000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

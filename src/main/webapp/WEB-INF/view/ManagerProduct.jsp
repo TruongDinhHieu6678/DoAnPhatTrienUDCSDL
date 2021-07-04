@@ -57,7 +57,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <c:forEach items="${lst_sp}" var="sp">
+                        <c:forEach items="${list_sp}" var="sp">
                             <tr>
                                 <td>
                                     <span class="custom-checkbox">
@@ -65,12 +65,12 @@
                                         <label for="checkbox1"></label>
                                     </span>
                                 </td>
-                                <td>${sp.MaSanPham}</td>
-                                <td>${sp.TenSanPham}</td>
+                                <td>${sp.maSanPham}</td>
+                                <td>${sp.tenSanPham}</td>
                                 <td>
-                                    <img src="${sp.HinhURL}">
+                                    <img src="images/${sp.hinhURL}">
                                 </td>
-                                <td>100 $</td>
+                                <td>${sp.giaSanPham}</td>
                                 <td>
                                     <a href="#editEmployeeModal"  class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                                     <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
@@ -79,18 +79,16 @@
                         </c:forEach>
                     </tbody>
                 </table>
-                <div class="clearfix">
-                    <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
-                    <ul class="pagination">
-                        <li class="page-item disabled"><a href="#">Previous</a></li>
-                        <li class="page-item"><a href="#" class="page-link">1</a></li>
-                        <li class="page-item"><a href="#" class="page-link">2</a></li>
-                        <li class="page-item active"><a href="#" class="page-link">3</a></li>
-                        <li class="page-item"><a href="#" class="page-link">4</a></li>
-                        <li class="page-item"><a href="#" class="page-link">5</a></li>
-                        <li class="page-item"><a href="#" class="page-link">Next</a></li>
-                    </ul>
-                </div>
+                    <div class="clearfix">
+                        <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+                        <ul class="pagination">
+                            <c:forEach items="ListTrang" var="T">
+                                <li class="${T.Status}"><a href="ManagerProduct.html?Trang=${T.Trang}" class="page-link">${T.Trang}</a></li>
+                            </c:forEach>
+
+                        </ul>
+                    </div>
+
             </div>
             <a href="#"><button type="button" class="btn btn-primary">Back to home</button>
 

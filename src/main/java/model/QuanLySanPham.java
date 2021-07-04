@@ -5,6 +5,8 @@
  */
 package model;
 
+import com.sun.org.apache.xml.internal.serializer.ToStream;
+
 import java.sql.PreparedStatement;
 import java.sql.Array;
 import java.sql.Connection;
@@ -76,8 +78,62 @@ public class QuanLySanPham {
         }
         return lst;
     }
-    
-    
+
+    public List<SanPham> getSanPhamTheoTrang(int Trang)
+    {
+        Connection connection = null;
+        ResultSet rs = null;
+        List<SanPham> lst = new ArrayList<SanPham>();
+        try
+        {
+            DataConnectManager dataConnnectManager = new DataConnectManager();
+            connection =  dataConnnectManager.getConnection();
+
+            if (connection != null)
+            {
+                String strSQL = String.format("SELECT * FROM sanpham\n" +
+                        "LIMIT 5 OFFSET %d", Trang*5 - 5);
+                rs =  dataConnnectManager.getDataTable(strSQL, connection);
+                while(rs.next())
+                {
+                    SanPham sp = new SanPham();
+                    sp.setMaSanPham(rs.getString("MaSanPham"));
+                    sp.setTenSanPham(rs.getString("TenSanPham"));
+                    sp.setHinhURL(rs.getString("HinhURL").toString());
+                    sp.setGiaSanPham(rs.getDouble("GiaSanPham"));
+                    sp.setNgayNhap(rs.getString("NgayNhap"));
+                    sp.setSoLuongTon((rs.getInt("SoLuongTon")));
+                    sp.setSoLuongBan((rs.getInt("SoLuongBan")));
+                    sp.setSoLuocXem((rs.getInt("SoLuocXem")));
+                    sp.setMoTa(rs.getString("MoTa"));
+                    sp.setBiXoa(rs.getInt("BiXoa"));
+                    sp.setMaLoaiSanPham(rs.getInt("MaLoaiSanPham"));
+                    sp.setMaHangSanXuat(rs.getInt("MaHangSanXuat"));
+                    lst.add(sp);
+                }
+            }
+
+
+
+        }
+        catch(Exception e)
+        {
+
+        }
+        finally {
+            if (connection != null) {
+                try {
+                    rs.close();
+                    connection.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(QuanLySanPham.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+        return lst;
+    }
+
+
     public SanPham LaySanPhamMoiNhat()
     {
         Connection connection = null;
@@ -182,8 +238,22 @@ public class QuanLySanPham {
             }
         }
         return lst;
+
+
     }
-    
+
+    public List<Trang> GetTrang(int pagefocus)
+    {
+        List<Trang> lsT = new ArrayList<Trang>();
+        for (int i = 0; i < 5; i++) {
+            Trang item = new Trang();
+            item.setSoTrang(i);
+            item.setStatus("page-item");
+            lsT.add(item);
+        }
+        lsT.get(pagefocus).setStatus("page-item active");
+        return lsT;
+    }
     
     public SanPham LayChiTietSanPham(String MaSanPham)
     {
