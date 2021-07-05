@@ -82,10 +82,9 @@
                     <div class="clearfix">
                         <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
                         <ul class="pagination">
-                            <c:forEach items="ListTrang" var="T">
-                                <li class="${T.Status}"><a href="ManagerProduct.html?Trang=${T.Trang}" class="page-link">${T.Trang}</a></li>
+                            <c:forEach items="${list_T}" var="T">
+                                <li class="${T.getStatus()}"><a href="ManagerProduct.html?Trang=${T.getSoTrang()}" class="page-link">${T.getSoTrang()}</a></li>
                             </c:forEach>
-
                         </ul>
                     </div>
 

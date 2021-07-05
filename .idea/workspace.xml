@@ -10,15 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="588f006d-0e90-4345-ad36-794701036a71" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Trang.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/18600321_51_war_exploded/WEB-INF/classes/controller/ManagerProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/18600321_51_war_exploded/WEB-INF/classes/controller/ManagerProductController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/18600321_51_war_exploded/WEB-INF/classes/model/QuanLySanPham.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/18600321_51_war_exploded/WEB-INF/classes/model/QuanLySanPham.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/18600321_51_war_exploded/WEB-INF/view/ManagerProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/18600321_51_war_exploded/WEB-INF/view/ManagerProduct.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/18600321_51_war_exploded/WEB-INF/view/Menu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/18600321_51_war_exploded/WEB-INF/view/Menu.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/ManagerProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ManagerProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/QuanLySanPham.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/QuanLySanPham.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Trang.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Trang.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/ManagerProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/ManagerProduct.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/Menu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/Menu.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controller/ManagerProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/ManagerProductController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/QuanLySanPham.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/QuanLySanPham.class" afterDir="false" />
     </list>
@@ -58,22 +60,11 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Tomcat 9.0.48" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.48" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -84,7 +75,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="f8211447-8abc-47d7-87a5-98ecd9f58271" />
+        <option name="BASE_DIRECTORY_NAME" value="0b0de1e6-524e-48fc-999d-ad85c3f44e78" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -92,7 +83,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="61494" />
+        <option name="DEBUG_PORT" value="59478" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -173,6 +164,7 @@
       <workItem from="1625326555769" duration="1015000" />
       <workItem from="1625374702577" duration="904000" />
       <workItem from="1625375819964" duration="27924000" />
+      <workItem from="1625460041865" duration="17925000" />
     </task>
     <servers />
   </component>
@@ -189,6 +181,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

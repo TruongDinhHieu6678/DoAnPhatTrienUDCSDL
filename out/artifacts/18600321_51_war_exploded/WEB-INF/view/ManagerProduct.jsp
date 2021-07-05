@@ -79,20 +79,14 @@
                         </c:forEach>
                     </tbody>
                 </table>
-                <form action="/Trang" method="get">
                     <div class="clearfix">
                         <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
                         <ul class="pagination">
-                            <li class="page-item disabled"><a href="#">Previous</a></li>
-                            <li class="page-item active"><a href="ManagerProduct.html?Trang=1" class="page-link">1</a></li>
-                            <li class="page-item"><a href="#" class="page-link">2</a></li>
-                            <li class="page-item"><a href="#" class="page-link">3</a></li>
-                            <li class="page-item"><a href="#" class="page-link">4</a></li>
-                            <li class="page-item"><a href="#" class="page-link">5</a></li>
-                            <li class="page-item"><a href="#" class="page-link">Next</a></li>
+                            <c:forEach items="${list_T}" var="T">
+                                <li class="${T.getStatus()}"><a href="ManagerProduct.html?Trang=${T.getSoTrang()}" class="page-link">${T.getSoTrang()}</a></li>
+                            </c:forEach>
                         </ul>
                     </div>
-                </form>
 
             </div>
             <a href="#"><button type="button" class="btn btn-primary">Back to home</button>

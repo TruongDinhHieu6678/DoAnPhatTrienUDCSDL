@@ -21,7 +21,7 @@
             <version>7.0</version>
             <scope>provided</scope>
         </dependency>
-        
+        <!-- https://mvnrepository.com/artifact/com.sun.xml.security/xml-security-impl -->
         <dependency>
             <groupId>org.eclipse.persistence</groupId>
             <artifactId>javax.persistence</artifactId>
@@ -74,7 +74,7 @@
             <artifactId>aspectjweaver</artifactId>
             <version>1.6.10</version>
         </dependency>
-        
+
         <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <dependency>
             <groupId>mysql</groupId>

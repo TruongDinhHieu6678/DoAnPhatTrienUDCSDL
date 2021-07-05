@@ -1,10 +1,10 @@
 package model;
 
 public class Trang {
-    private int SoTrang;
+    private String SoTrang;
     private String Status;
 
-    public int getSoTrang() {
+    public String getSoTrang() {
         return SoTrang;
     }
 
@@ -12,7 +12,7 @@ public class Trang {
         return Status;
     }
 
-    public void setSoTrang(int soTrang) {
+    public void setSoTrang(String soTrang) {
         SoTrang = soTrang;
     }
 

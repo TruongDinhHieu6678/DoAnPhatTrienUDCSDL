@@ -5,8 +5,6 @@
  */
 package model;
 
-import com.sun.org.apache.xml.internal.serializer.ToStream;
-
 import java.sql.PreparedStatement;
 import java.sql.Array;
 import java.sql.Connection;
@@ -241,18 +239,74 @@ public class QuanLySanPham {
 
 
     }
-
-    public List<Trang> GetTrang(int pagefocus)
+    public static List<Trang> lsT1 = new ArrayList<Trang>();
+    public int PageFocus(String pagefocus, int DK)
     {
-        List<Trang> lsT = new ArrayList<Trang>();
-        for (int i = 0; i < 5; i++) {
-            Trang item = new Trang();
-            item.setSoTrang(i);
-            item.setStatus("page-item");
-            lsT.add(item);
+        if(pagefocus.equals("Previos") || pagefocus.equals("Next"))
+        {
+            for (int i = 0; i < lsT1.size(); i++) {
+                if(lsT1.get(i).getStatus() == "page-item active")
+                {
+                    if(DK == 0)
+                    {
+                        lsT1.get(i).setStatus("page-item");
+                    }
+                    if(pagefocus.equals("Previos"))
+                        return Integer.parseInt(lsT1.get(i).getSoTrang()) - 1;
+                    else
+                        return Integer.parseInt(lsT1.get(i).getSoTrang()) + 1;
+                }
+            }
         }
-        lsT.get(pagefocus).setStatus("page-item active");
-        return lsT;
+        else
+        {
+            for (int j = 0; j < lsT1.size(); j++) {
+                if(lsT1.get(j).getStatus() == "page-item active")
+                {
+                    if(DK == 0)
+                    {
+                        lsT1.get(j).setStatus("page-item");
+                    }
+                }
+            }
+        }
+        return Integer.parseInt( pagefocus);
+    }
+    public List<Trang> GetTrang(String pagefocus)
+    {
+        int Pagefocus = PageFocus(pagefocus, 0);
+        int sotrang = getAllSanPham().size() / 5 == 0 ? getAllSanPham().size() / 5: getAllSanPham().size() / 5+1;
+        int begin = Pagefocus >=6 ? Pagefocus -5 : 0;
+        for ( int i = 0; i < 7; i++) {
+            Trang item = new Trang();
+            item.setSoTrang(Integer.toString(begin));
+            item.setStatus("page-item");
+            if(lsT1.size() < 7)
+                lsT1.add(item);
+            begin++;
+        }
+
+        lsT1.get(Pagefocus).setStatus("page-item active");
+        if(Pagefocus == 5)
+        {
+            lsT1.get(6).setStatus("page-item  disabled");
+        }
+        else
+        {
+            lsT1.get(6).setSoTrang("Next");
+            lsT1.get(6).setStatus("page-item");
+        }
+        if (Pagefocus == 1)
+        {
+            lsT1.get(0).setSoTrang("Previos");
+            lsT1.get(0).setStatus("page-item  disabled");
+        }
+        else
+        {
+            lsT1.get(0).setSoTrang("Previos");
+            lsT1.get(0).setStatus("page-item");
+        }
+        return lsT1;
     }
     
     public SanPham LayChiTietSanPham(String MaSanPham)
