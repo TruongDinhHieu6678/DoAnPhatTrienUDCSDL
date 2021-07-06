@@ -77,6 +77,135 @@ public class QuanLySanPham {
         return lst;
     }
 
+    public int MasanphamHonle()
+    {
+        Connection connection = null;
+        ResultSet rs = null;
+        try
+        {
+            DataConnectManager dataConnnectManager = new DataConnectManager();
+            connection =  dataConnnectManager.getConnection();
+
+            if (connection != null)
+            {
+                String strSQL = "SELECT MaSanPham\n" +
+                        "FROM sanpham\n" +
+                        "ORDER BY MaSanPham DESC;";
+                rs =  dataConnnectManager.getDataTable(strSQL, connection);
+                while(rs.next())
+                {
+                    return rs.getInt("MaSanPham".trim());
+                }
+            }
+
+
+
+        }
+        catch(Exception e)
+        {
+
+        }
+        finally {
+            if (connection != null) {
+                try {
+                    rs.close();
+                    connection.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(QuanLySanPham.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+        return -1;
+    }
+
+    public List<LoaiSanPham> getAllLoaiSanPham()
+    {
+        Connection connection = null;
+        ResultSet rs = null;
+        List<LoaiSanPham> lst = new ArrayList<LoaiSanPham>();
+        try
+        {
+            DataConnectManager dataConnnectManager = new DataConnectManager();
+            connection =  dataConnnectManager.getConnection();
+
+            if (connection != null)
+            {
+                String strSQL = "SELECT * FROM loaisanpham";
+                rs =  dataConnnectManager.getDataTable(strSQL, connection);
+                while(rs.next())
+                {
+                    LoaiSanPham lsp = new LoaiSanPham();
+                    lsp.setTenLoaiSanPham(rs.getString("TenLoaiSanPham"));
+                    lsp.setMaLoaiSanPham(rs.getInt("MaLoaiSanPham"));
+                    lsp.setBiXoa(rs.getInt("BiXoa"));
+                    lst.add(lsp);
+                }
+            }
+
+
+
+        }
+        catch(Exception e)
+        {
+
+        }
+        finally {
+            if (connection != null) {
+                try {
+                    rs.close();
+                    connection.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(QuanLySanPham.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+        return lst;
+    }
+
+    public boolean AddSanpham(SanPham sanPham)
+    {
+        Connection connection = null;
+        ResultSet rs = null;
+        try
+        {
+            DataConnectManager dataConnnectManager = new DataConnectManager();
+            connection =  dataConnnectManager.getConnection();
+
+            if (connection != null)
+            {
+                Statement statement = connection.createStatement();
+                String sql = String.format("INSERT INTO sanpham (MaSanPham, TenSanPham, HinhURL, GiaSanPham,MoTa, MaLoaiSanPham) Values ($s,%s,%s,%f,%s,%d)",
+                       sanPham.getMaSanPham(), sanPham.getTenSanPham(),sanPham.getHinhURL(),sanPham.getGiaSanPham(),sanPham.getMoTa(),sanPham.getMaLoaiSanPham());
+
+                int n = statement.executeUpdate(sql);
+                if (n == 1){
+                    return true;
+                } else {
+                    return false;
+                }
+
+            }
+
+
+
+        }
+        catch(Exception e)
+        {
+
+        }
+        finally {
+            if (connection != null) {
+                try {
+                    rs.close();
+                    connection.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(QuanLySanPham.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+        return false;
+    }
+
     public List<SanPham> getSanPhamTheoTrang(int Trang)
     {
         Connection connection = null;
@@ -287,7 +416,7 @@ public class QuanLySanPham {
         }
 
         lsT1.get(Pagefocus).setStatus("page-item active");
-        if(Pagefocus == 5)
+        if(Pagefocus == sotrang-1)
         {
             lsT1.get(6).setStatus("page-item  disabled");
         }
@@ -308,6 +437,42 @@ public class QuanLySanPham {
         }
         return lsT1;
     }
+
+    /*public int LayMaLoaiSanPham(String TenLoaiSanPham)
+    {
+        Connection connection = null;
+        ResultSet rs = null;
+        try
+        {
+            DataConnectManager dataConnnectManager = new DataConnectManager();
+            connection =  dataConnnectManager.getConnection();
+
+            if (connection != null)
+            {
+                String strSQL = String.format("SELECT * FROM `loaisanpham` WHERE TenLoaiSanPham = %s", TenLoaiSanPham);
+                rs =  dataConnnectManager.getDataTable(strSQL, connection);
+                while(rs.next())
+                {
+                    return rs.getInt("MaLoaiSanPham");
+                }
+            }
+        }
+        catch(Exception e)
+        {
+
+        }
+        finally {
+            if (connection != null) {
+                try {
+                    rs.close();
+                    connection.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(QuanLySanPham.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+        return -1;
+    }*/
     
     public SanPham LayChiTietSanPham(String MaSanPham)
     {

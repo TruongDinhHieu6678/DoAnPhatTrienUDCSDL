@@ -75,6 +75,7 @@
                                     <a href="#editEmployeeModal"  class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                                     <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                                 </td>
+
                             </tr>
                         </c:forEach>
                     </tbody>
@@ -96,12 +97,12 @@
         <div id="addEmployeeModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form action="add" method="post">
-                        <div class="modal-header">						
+                    <form action="Add" method="get">
+                        <div class="modal-header">
                             <h4 class="modal-title">Add Product</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
-                        <div class="modal-body">					
+                        <div class="modal-body">
                             <div class="form-group">
                                 <label>Name</label>
                                 <input name="name" type="text" class="form-control" required>
@@ -119,14 +120,14 @@
                                 <textarea name="title" class="form-control" required></textarea>
                             </div>
                             <div class="form-group">
-                                <label>Description</label>
-                                <textarea name="description" class="form-control" required></textarea>
+                                <label>Date Added</label>
+                                <textarea name="DateAdded" class="form-control" required></textarea>
                             </div>
                             <div class="form-group">
                                 <label>Category</label>
                                 <select name="category" class="form-select" aria-label="Default select example">
-                                    <c:forEach begin="1" end="3" var="o">
-                                        <option value="1">Giày Adidas</option>
+                                    <c:forEach items="${List_lsp}" var="lsp">
+                                        <option value="${lsp.getMaLoaiSanPham()}">${lsp.getTenLoaiSanPham()}</option>
                                     </c:forEach>
                                 </select>
                             </div>
@@ -144,7 +145,7 @@
         <div id="editEmployeeModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form>
+                    <form action="Edit" method="get">
                         <div class="modal-header">						
                             <h4 class="modal-title">Edit Employee</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -179,7 +180,7 @@
         <div id="deleteEmployeeModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form>
+                    <form action="Delete" method="get">
                         <div class="modal-header">						
                             <h4 class="modal-title">Delete Product</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>

@@ -12,15 +12,16 @@ import java.util.List;
 
 @Controller
 public class ManagerProductController {
-    int k = 0;
     @RequestMapping(value = "/ManagerProduct",method = RequestMethod.GET)
     public String LayDanhSachSanPham(Model model , @RequestParam("Trang") String Trang){
 
         QuanLySanPham qlsp = new QuanLySanPham();
         List<model.Trang> ListT = qlsp.GetTrang(Trang);
         List<SanPham> lst_sp = qlsp.getSanPhamTheoTrang(qlsp.PageFocus(Trang, 1));
+        List<LoaiSanPham> lst_lsp = qlsp.getAllLoaiSanPham();
         model.addAttribute("list_sp", lst_sp);
         model.addAttribute("list_T", ListT);
+        model.addAttribute("List_lsp", lst_lsp);
         return "ManagerProduct";
     }
 }
