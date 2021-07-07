@@ -71,5 +71,40 @@ public class QuanLyLoaiSanPham {
         }
         return lst;
     }
+    public int LayMaLoaiSanPham(String TenLoaiSanPham)
+    {
+        Connection connection = null;
+        ResultSet rs = null;
+        try
+        {
+            DataConnectManager dataConnnectManager = new DataConnectManager();
+            connection =  dataConnnectManager.getConnection();
+
+            if (connection != null)
+            {
+                String strSQL = String.format("SELECT * FROM `loaisanpham` WHERE TenLoaiSanPham = %s", TenLoaiSanPham);
+                rs =  dataConnnectManager.getDataTable(strSQL, connection);
+                while(rs.next())
+                {
+                    return rs.getInt("MaLoaiSanPham");
+                }
+            }
+        }
+        catch(Exception e)
+        {
+
+        }
+        finally {
+            if (connection != null) {
+                try {
+                    rs.close();
+                    connection.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(QuanLySanPham.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+        return -1;
+    }
     
 }

@@ -13,7 +13,7 @@
                     <a class="nav-link" href="#">Manager Account</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="ManagerProduct.html?Trang=1">Manager Product</a>
+                    <a class="nav-link" href="ManagerProductController">Manager Product</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Hello Alias</a>

@@ -165,7 +165,6 @@ public class QuanLySanPham {
     public boolean AddSanpham(SanPham sanPham)
     {
         Connection connection = null;
-        ResultSet rs = null;
         try
         {
             DataConnectManager dataConnnectManager = new DataConnectManager();
@@ -174,8 +173,8 @@ public class QuanLySanPham {
             if (connection != null)
             {
                 Statement statement = connection.createStatement();
-                String sql = String.format("INSERT INTO sanpham (MaSanPham, TenSanPham, HinhURL, GiaSanPham,MoTa, MaLoaiSanPham) Values ($s,%s,%s,%f,%s,%d)",
-                       sanPham.getMaSanPham(), sanPham.getTenSanPham(),sanPham.getHinhURL(),sanPham.getGiaSanPham(),sanPham.getMoTa(),sanPham.getMaLoaiSanPham());
+                String sql = String.format("INSERT INTO sanpham (TenSanPham, HinhURL, GiaSanPham,MoTa, MaLoaiSanPham,MaHangSanXuat) Values ('%s','%s',%f,'%s',%d,%d)",
+                       sanPham.getTenSanPham(),sanPham.getHinhURL(),sanPham.getGiaSanPham(),sanPham.getMoTa(),sanPham.getMaLoaiSanPham(),1);
 
                 int n = statement.executeUpdate(sql);
                 if (n == 1){
@@ -196,7 +195,6 @@ public class QuanLySanPham {
         finally {
             if (connection != null) {
                 try {
-                    rs.close();
                     connection.close();
                 } catch (SQLException ex) {
                     Logger.getLogger(QuanLySanPham.class.getName()).log(Level.SEVERE, null, ex);
@@ -380,6 +378,8 @@ public class QuanLySanPham {
                     {
                         lsT1.get(i).setStatus("page-item");
                     }
+                    else
+                        return Pagefocus;
                     if(pagefocus.equals("Previos"))
                         return Integer.parseInt(lsT1.get(i).getSoTrang()) - 1;
                     else
@@ -401,78 +401,58 @@ public class QuanLySanPham {
         }
         return Integer.parseInt( pagefocus);
     }
+
+    int Pagefocus= 1;
     public List<Trang> GetTrang(String pagefocus)
     {
-        int Pagefocus = PageFocus(pagefocus, 0);
+        Pagefocus = PageFocus(pagefocus, 0);
         int sotrang = getAllSanPham().size() / 5 == 0 ? getAllSanPham().size() / 5: getAllSanPham().size() / 5+1;
-        int begin = Pagefocus >=6 ? Pagefocus -5 : 0;
+        int begin = Pagefocus > 5 ? Pagefocus -5 : 0;
         for ( int i = 0; i < 7; i++) {
             Trang item = new Trang();
             item.setSoTrang(Integer.toString(begin));
             item.setStatus("page-item");
             if(lsT1.size() < 7)
+            {
                 lsT1.add(item);
+            }else
+            {
+                lsT1.get(i).setStatus("page-item");
+                lsT1.get(i).setSoTrang(Integer.toString(begin));
+            }
             begin++;
         }
-
-        lsT1.get(Pagefocus).setStatus("page-item active");
-        if(Pagefocus == sotrang-1)
+        for (int j = 0; j < lsT1.size(); j++)
         {
-            lsT1.get(6).setStatus("page-item  disabled");
-        }
-        else
-        {
-            lsT1.get(6).setSoTrang("Next");
-            lsT1.get(6).setStatus("page-item");
-        }
-        if (Pagefocus == 1)
-        {
-            lsT1.get(0).setSoTrang("Previos");
-            lsT1.get(0).setStatus("page-item  disabled");
-        }
-        else
-        {
-            lsT1.get(0).setSoTrang("Previos");
-            lsT1.get(0).setStatus("page-item");
+            if(lsT1.get(j).getSoTrang().equals(Integer.toString(Pagefocus)))
+            {
+                lsT1.get(j).setStatus("page-item active");
+                if(j == 5)
+                {
+                    lsT1.get(6).setSoTrang("Next");
+                    if(sotrang > Pagefocus)
+                    {
+                        lsT1.get(j+1).setStatus("page-item");
+                    }
+                    else
+                        lsT1.get(j+1).setStatus("page-item disabled");
+                }
+                lsT1.get(6).setSoTrang("Next");
+            }
+            if (Pagefocus == 1)
+            {
+                lsT1.get(0).setStatus("page-item disabled");
+                lsT1.get(0).setSoTrang("Previos");
+            }
+            else
+            {
+                lsT1.get(0).setStatus("page-item");
+                lsT1.get(0).setSoTrang("Previos");
+            }
         }
         return lsT1;
     }
 
-    /*public int LayMaLoaiSanPham(String TenLoaiSanPham)
-    {
-        Connection connection = null;
-        ResultSet rs = null;
-        try
-        {
-            DataConnectManager dataConnnectManager = new DataConnectManager();
-            connection =  dataConnnectManager.getConnection();
-
-            if (connection != null)
-            {
-                String strSQL = String.format("SELECT * FROM `loaisanpham` WHERE TenLoaiSanPham = %s", TenLoaiSanPham);
-                rs =  dataConnnectManager.getDataTable(strSQL, connection);
-                while(rs.next())
-                {
-                    return rs.getInt("MaLoaiSanPham");
-                }
-            }
-        }
-        catch(Exception e)
-        {
-
-        }
-        finally {
-            if (connection != null) {
-                try {
-                    rs.close();
-                    connection.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(QuanLySanPham.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        }
-        return -1;
-    }*/
     
     public SanPham LayChiTietSanPham(String MaSanPham)
     {

@@ -10,19 +10,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="588f006d-0e90-4345-ad36-794701036a71" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/Add.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/Delete.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/Edit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/TaiKhoan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/18600321_51_war.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_java5_21_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/AddController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/18600321_51.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/18600321_51.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/18600321_51_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/18600321_51_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/18600321_51_war_exploded/WEB-INF/classes/controller/Add.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/18600321_51_war_exploded/WEB-INF/classes/controller/Add.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/18600321_51_war_exploded/WEB-INF/classes/controller/ManagerProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/18600321_51_war_exploded/WEB-INF/classes/controller/ManagerProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/18600321_51_war_exploded/WEB-INF/classes/model/QuanLySanPham.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/18600321_51_war_exploded/WEB-INF/classes/model/QuanLySanPham.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/18600321_51_war_exploded/WEB-INF/view/ManagerProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/18600321_51_war_exploded/WEB-INF/view/ManagerProduct.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ManagerProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ManagerProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/18600321_51_war_exploded/WEB-INF/view/Menu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/18600321_51_war_exploded/WEB-INF/view/Menu.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/18600321_51_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/18600321_51_war_exploded/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Add.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Delete.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Edit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/QuanLyLoaiSanPham.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/QuanLyLoaiSanPham.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/QuanLySanPham.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/QuanLySanPham.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/ManagerProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/ManagerProduct.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/ManagerProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/ManagerProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/QuanLySanPham.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/QuanLySanPham.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/Add.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/Delete.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/Edit.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,13 +73,15 @@
     <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -177,7 +187,8 @@
       <workItem from="1625375819964" duration="27924000" />
       <workItem from="1625460041865" duration="36089000" />
       <workItem from="1625548774701" duration="1755000" />
-      <workItem from="1625577553937" duration="4982000" />
+      <workItem from="1625577553937" duration="5122000" />
+      <workItem from="1625625374701" duration="18338000" />
     </task>
     <servers />
   </component>
